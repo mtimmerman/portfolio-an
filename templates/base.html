@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block page_title %}{% endblock %}</title>
+        <title>An Verhuizen - {% block page_title %}{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{% trans "Portfolio site of An Verhuizen" %}">
@@ -10,7 +10,10 @@
         <!-- Bootstrap -->
         <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
         <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">
-        <link href="{% static "portfolio_an/css/screen.css" %}" rel="stylesheet">
+        <link href="{% static "portfolio_an/stylesheets/screen.css" %}" rel="stylesheet">
+        <link href="{% static "portfolio_an/stylesheets/responsive.css" %}" rel="stylesheet">
+        <link href="{% static "portfolio_an/stylesheets/ie.css" %}" rel="stylesheet">
+        <link href="{% static "portfolio_an/stylesheets/print.css" %}" rel="stylesheet">
         
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -31,31 +34,43 @@
           <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
           <div class="container">
     
-            <nav class="navbar navbar-default" role="navigation">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Brand</a>
+                        <a class="navbar-brand" href="{% url "home" %}">Brand</a>
                     </div>
-                    <div class="navbar-collapse navbar-inner" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav" style="width:90%">
-                            <li><a href="#aboutme">{% trans "Over mij" %}</a></li>
-                            <li><a href="#services">{% trans "Diensten" %}</a></li>
-                            <li><a href="#faq">{% trans "FAQ" %}</a></li>
+                    <div class="navbar-collapse navbar-inner">
+                        <ul class="nav navbar-nav navbar-90">
+                            <li><a href="{% url "about" %}">{% trans "Over mij" %}</a></li>
+                            <li><a href="{% url "services" %}">{% trans "Diensten" %}</a></li>
+                            <li><a href="{% url "faq" %}">{% trans "FAQ" %}</a></li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">{% trans "Contact" %}</a></li>
+                        <ul class="nav navbar-nav navbar-right text-right">
+                            <li><a href="{% url "contact" %}">{% trans "Contact" %}</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
           </div> <!-- /.container -->
         </div><!-- /.navbar-wrapper -->
+        {% block breadcrumbs %}
+        <div class="container">
+            <div class="row">
+                <div class="text-right">
+                    <ol class="breadcrumb">
+                        <li><a href="{% url "home" %}">Home</a></li>
+                        {% block extra_crumbs %}{% endblock %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        {% endblock%}
         {% block content %}{% endblock %}
         <div class="container">
             <!-- FOOTER -->
             <footer>
                 <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2014 An Verhuizen &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2014 An Verhuizen &middot; <a href="#">Terms</a></p>
             </footer>
         </div>
         <script src="http://code.jquery.com/jquery.js"></script>
