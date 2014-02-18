@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import TemplateView
+from portfolio_an import views
 
 admin.autodiscover()
 
@@ -24,4 +25,5 @@ urlpatterns += patterns(
     # Internationalization
 
     (r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^i18n/setlang/$', views.set_language, name='set_language'),
 )

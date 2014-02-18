@@ -145,17 +145,16 @@ nav .navbar-inner {
  * ------------ */
 /* line 139, ../sass/screen.scss */
 .breadcrumb {
-  background-color: #fff;
-  margin: 10px 10px 10px;
+  background-color: #fff !important;
 }
 
 /* Language bar
  * ------------ */
-/* line 147, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .language-bar {
   margin: 0 !important;
 }
-/* line 150, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .language-bar a, .language-bar .active {
   padding: 10px 5px 5px !important;
   line-height: 20px;
