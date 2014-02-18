@@ -14,27 +14,35 @@ body {
 /* NAVBAR
  * ------- */
 /* line 18, ../sass/screen.scss */
-.navbar-90 {
-  min-width: 90%;
+nav {
+  padding-bottom: 10px;
+}
+/* line 21, ../sass/screen.scss */
+nav .navbar-90 {
+  min-width: 88%;
+}
+/* line 24, ../sass/screen.scss */
+nav .navbar-inner {
+  padding-right: 0 !important;
 }
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
-/* line 26, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .carousel {
   margin-bottom: 60px;
 }
-/* line 29, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .carousel .container {
   position: relative;
   z-index: 9;
 }
-/* line 34, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 .carousel .item {
   height: 500px;
 }
-/* line 38, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 .carousel img {
   position: absolute;
   top: 0;
@@ -43,7 +51,7 @@ body {
   height: 500px;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .carousel-control {
   height: 80px;
   margin-top: 0;
@@ -54,7 +62,7 @@ body {
   z-index: 10;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .carousel-caption {
   background-color: transparent;
   position: static;
@@ -62,14 +70,14 @@ body {
   padding: 0 20px;
   margin-top: 200px;
 }
-/* line 64, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 .carousel-caption h1, .carousel-caption .lead {
   margin: 0;
   line-height: 1.25;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
-/* line 71, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .carousel-caption .btn {
   margin-top: 10px;
 }
@@ -77,29 +85,29 @@ body {
 /* MARKETING CONTENT
 -------------------------------------------------- */
 /* Center align the text within the three columns below the carousel */
-/* line 82, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .marketing .span4 {
   text-align: center;
 }
-/* line 85, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .marketing .span4 p {
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 91, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .marketing h2 {
   font-weight: normal;
 }
 
 /* Featurettes
 ------------------------- */
-/* line 99, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .featurette-divider {
   margin: 80px 0;
   /* Space out the Bootstrap <hr> more */
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .featurette {
   padding-top: 120px;
   /* Vertically center images part 1: add padding above and below text. */
@@ -107,25 +115,25 @@ body {
   /* Vertically center images part 2: clear their floats. */
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .featurette-image {
   margin-top: -120px;
   /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
 }
 
 /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-/* line 113, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .featurette-image.pull-left {
   margin-right: 40px;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .featurette-image.pull-right {
   margin-left: 40px;
 }
 
 /* Thin out the marketing headings */
-/* line 122, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .featurette-heading {
   font-size: 50px;
   font-weight: 300;
@@ -135,8 +143,21 @@ body {
 
 /* Breadcrumb
  * ------------ */
-/* line 132, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 .breadcrumb {
   background-color: #fff;
   margin: 10px 10px 10px;
+}
+
+/* Language bar
+ * ------------ */
+/* line 147, ../sass/screen.scss */
+.language-bar {
+  margin: 0 !important;
+}
+/* line 150, ../sass/screen.scss */
+.language-bar a, .language-bar .active {
+  padding: 10px 5px 5px !important;
+  line-height: 20px;
+  display: block;
 }

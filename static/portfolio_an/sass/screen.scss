@@ -15,8 +15,15 @@ body {
 /* NAVBAR
  * ------- */
 
-.navbar-90 {
-  min-width:90%
+nav {
+  padding-bottom: 10px;
+  
+  .navbar-90 {
+    min-width:88%
+  }
+  .navbar-inner {
+    padding-right: 0 !important;
+  }  
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -132,4 +139,17 @@ body {
 .breadcrumb {
   background-color:#fff;
   margin: 10px 10px 10px;
+}
+
+/* Language bar
+ * ------------ */
+
+.language-bar {
+  margin: 0 !important;
+  
+  a, .active {
+    padding: 10px 5px 5px !important;
+    line-height: 20px;
+    display:block;    
+  }  
 }
