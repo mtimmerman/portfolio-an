@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Vraag voor meer info van anverhuizen.be</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="margin: 0; padding: 0;">
+        <p>
+            Hallo An,
+        </p>
+        <p>
+            Je hebt een nieuw e-mail ontvangen van {{contact.first_name}} {{contact.last_name}}.
+            Hij / zij schreef het volgende:
+        </p>
+        <p>
+            &quot;{{contact.message}}&quot;
+        </p>
+        <p>
+            Om contact op te nemen kan je mailen naar {{contact.email}}
+        </p>
+        {% if contact.attachment %}
+        <p>
+            Oh ja, ze hebben ook een bestand toegevoegd! Zie bijlage.
+        </p>
+        {% endif %}
+    </body>
+</html>

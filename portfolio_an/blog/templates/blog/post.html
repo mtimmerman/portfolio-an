@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+	<section class="featured">
+	    <div class="container"> 
+	        <div class="row mar-bot40">
+	            <div class="col-md-6 col-md-offset-3">
+	                
+	                <div class="align-center">
+	                    <img class="my-image" src="{% static "portfolio_an/img/anverhuizen.jpg" %}" title="{% trans "Hallo! Ik ben An Verhuizen." %}" >
+	                    
+	                    <h2 class="slogan">My blog</h2>
+	                    <p>
+	                        With some pride, I present to you my website.                                
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section> 
+	<section id="post">   
+		<div class="container">
+			<div class="row">
+			    <div class="col-md-8 col-md-offset-2 post last">
+			        <h2>{{ post.title }}</h2>
+			        <ul>                        
+			            <div class="body">{{ post.body|safe }}</div>
+			            <div class="time align-right">{{ post.created }}</div>			            
+			        </ul>
+			    </div>
+			</div>
+		</div>
+	</section>
+	<section id="comment">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+				{% if comments %}
+					<p>Comments:</p>
+					<form action="{% url "delete_comment" post.pk %}" method="POST">{% csrf_token %}
+			            {% for comment in comments %}
+			                <div class="comment">
+			                    <div class="time">{{ comment.created }} | {{ comment.author }}</div>
+			                    <div class="body">{{ comment.body|linebreaks }}</div>
+			                    {% if user.is_staff %}
+			                        <input type="checkbox" name="delete" value="{{ comment.pk }}">
+			                        <a href="{% url blog.views.delete_comment post.pk comment.id %}">delete</a>
+			                    {% endif %}
+			                </div>
+			            {% endfor %}
+	
+			            {% if user.is_staff and comments %}
+			                <p><input type="submit" value="Delete all selected"></p>
+			                <br />
+			            {% endif %}
+	            	</form>
+	            {% endif %}
+            	<p>Add a comment</p>
+		            <!-- Comment form  -->
+		            <form role="form" action="{% url "add_comment" post.id %}" method="POST">{% csrf_token %}
+		            	<div class="form-group">
+		            		<label for="author">Name:</label>
+		            		{{ form.author }}
+		            	</div>
+		            	<div class="form-group">
+		            		{{ form.body }}
+		            	</div>		                
+		                <button type="submit" class="btn btn-primary">{% trans "Versturen" %}</button>
+		            </form>
+				</div>
+			</div>
+		</div>
+	</section>
+   
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+	<section class="featured">
+	    <div class="container"> 
+	        <div class="row mar-bot40">
+	            <div class="col-md-6 col-md-offset-3">
+	                
+	                <div class="align-center">
+	                    <img class="my-image" src="{% static "portfolio_an/img/anverhuizen.jpg" %}" title="{% trans "Hallo! Ik ben An Verhuizen." %}" >
+	                    
+	                    <h2 class="slogan">Hello everybody!</h2>
+	                    <p>
+	                        With some pride, I present to you my website. 
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+    <section class="posts">
+        <div class="container">
+<!-- Posts  -->
+            {% for post in post_list %}
+            {% include "blog/_post.html" %}
+            {% endfor %}
+            <!-- Next/Prev page links  -->
+            {% if not archive and posts.object_list and posts.paginator.num_pages > 1 %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if posts.has_previous %}
+                        <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>
+                    {% endif %}
+    
+                    <span class="current">
+                        &nbsp;Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+                    </span>
+    
+                    {% if posts.has_next %}
+                        <a href="?page={{ posts.next_page_number }}"> &gt;&gt; older entries</a>
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

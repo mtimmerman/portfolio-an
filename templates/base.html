@@ -1,86 +1,128 @@
 {% load i18n static %}
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>An Verhuizen - {% block page_title %}{% endblock %}</title>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+        <!-- BASICS -->
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>An Verhuizen {% trans "Vertaler-Tolk Spaans Engels Nederlands" %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{% trans "Portfolio site of An Verhuizen" %}">
-        <meta name="author" content="Maarten Timmerman">
-        
-        <link href="{% static "portfolio_an/stylesheets/screen.css" %}" rel="stylesheet">
-        <link href="{% static "portfolio_an/stylesheets/responsive.css" %}" rel="stylesheet">
-        <link href="{% static "portfolio_an/stylesheets/ie.css" %}" rel="stylesheet">
-        <link href="{% static "portfolio_an/stylesheets/print.css" %}" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">        
-        
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="../assets/js/html5shiv.js"></script>
-        <![endif]-->
-    
-        <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "ico/apple-touch-icon-144-precomposed.png" %}">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "ico/apple-touch-icon-114-precomposed.png" %}">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "ico/apple-touch-icon-72-precomposed.png" %}">
-        <link rel="apple-touch-icon-precomposed" href="{% static "ico/apple-touch-icon-57-precomposed.png" %}">
-        <link rel="shortcut icon" href="{% static "ico/favicon.png" %}">
+        <meta name="title" content="An Verhuizen Vertaler-Tolk Spaans Engels Nederlands" >
+        <meta name="description" content="Een beëdigde vertaling nodig of een tolk om jou te helpen in de rechtbank, bij de politie, het OCMW of het ziekenhuis? Bij mij ben je aan het juiste adres!">
+        <meta property="og:type" content="website" >
+        <meta property="og:url" content="http://www.anverhuizen.be" >
+        <meta property="og:title" content="An Verhuizen Vertaler-Tolk Spaans Engels Nederlands" >
+        <meta property="og:image" content="http://www.anverhuizen.be{% static "portfolio_an/img/anverhuizen-small.jpg" %}" >
+        <meta property="og:description" content="Een beëdigde vertaling nodig of een tolk om jou te helpen in de rechtbank, bij de politie, het OCMW of het ziekenhuis? Bij mij ben je aan het juiste adres!" >
+        <link rel="stylesheet" type="text/css" href="{% static "portfolio_an/css/isotope.css" %}" media="screen" > 
+        <link rel="stylesheet" href="{% static "portfolio_an/js/fancybox/jquery.fancybox.css" %}" type="text/css" media="screen" >
+        <link rel="stylesheet" href="{% static "portfolio_an/css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "portfolio_an/css/bootstrap-theme.css" %}">
+        <link rel="stylesheet" href="{% static "portfolio_an/css/style.css" %}">
+        <!-- skin -->
+        <link rel="stylesheet" href="{% static "portfolio_an/skin/default.css" %}">
+        <!-- overrides -->
+        <link rel="stylesheet" href="{% static "portfolio_an/css/custom.css" %}">
+        <link rel="icon" type="image/png" href="{% static "portfolio_an/img/favicon.png" %}" >
+        <link rel="image_src" href="{% static "portfolio_an/img/anverhuizen.jpg" %}" >
+        <!-- Google Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-52853209-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+		<!-- End Google Analytics -->
     </head>
-    <body>        
-        <!-- NAVBAR
-        ================================================== -->
-        <div class="navbar-wrapper">
-          <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-          <div class="container">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+     
+    <body>
+        <section id="header" class="appear"></section>
+        <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.5);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{% url "home" %}">Brand</a>                                            
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bars color-white"></span>
+                    </button>
+                    <h1><a class="navbar-brand" href="{% url "home" %}" data-0="line-height:90px;" data-300="line-height:50px;"><span>A</span>n <span>V</span>erhuizen</a></h1>                    
                 </div>
-                <div class="navbar-inner">
-                    <ul class="nav navbar-nav navbar-90">
-                        <li><a href="{% url "about" %}">{% trans "Over mij" %}</a></li>
-                        <li><a href="{% url "services" %}">{% trans "Diensten" %}</a></li>
-                        <li><a href="{% url "faq" %}">{% trans "FAQ" %}</a></li>
-                        <li><a href="{% url "contact" %}">{% trans "Contact" %}</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right text-right language-bar">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                        <li class="active"><a href="{% url "home" %}">{% trans "Home" %}</a></li>
+                        <li><a href="{% url "home" %}#section-services">{% trans "Diensten" %}</a></li>
+                        <li><a href="{% url "home" %}#section-about">{% trans "Over mij" %}</a></li>                        
+                        <li><a href="{% url "home" %}#section-faq">{% trans "FAQ" %}</a></li>
+                        <li><a href="{% url "home" %}#section-contact">{% trans "Contact" %}</a></li>
+                        <li><a href="{% url "blog" %}">{% trans "Blog" %}</a></li>                        
                         {% for lang in LANGUAGES %}
-                    <li>
-                    {% if not lang.0 == LANGUAGE_CODE %}                        
-                        <a href="{% url "set_language" %}?language={{ lang.0 }}&amp;next={{ request.path }}"><img src="{{STATIC_URL}}portfolio_an/img/{{lang.0}}.png" alt="{{lang.0}}"></a>
-                    {% else %}
-                        <span class="active"><img src="{{STATIC_URL}}portfolio_an/img/{{lang.0}}.png" alt="{{lang.0}}"></span>
-                    {% endif %}
-                    </li>
-                {% endfor %}
+                        <li>
+                            <a href="{% url "set_language" %}?language={{ lang.0 }}&amp;next={{ request.path }}" title="{{lang.1}}"><img src="{{STATIC_URL}}portfolio_an/img/{{lang.0}}.png" alt="{{lang.0}}"></a>
+                        </li>
+                        {% endfor %}
                     </ul>
-                </div>                
-            </nav>
-          </div> <!-- /.container -->
-        </div><!-- /.navbar-wrapper -->
-        {% block breadcrumbs %}
-        <div class="container">
-            <div class="row">
-                <div class="text-right">
-                    <ol class="breadcrumb">
-                        <li><a href="{% url "home" %}">Home</a></li>
-                        {% block extra_crumbs %}{% endblock %}
-                    </ol>
-                </div>
+                </div><!--/.navbar-collapse -->
             </div>
         </div>
-        {% endblock%}
-        {% block content %}{% endblock %}
-        <div class="container">
-            <!-- FOOTER -->
-            <footer>
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2014 An Verhuizen &middot; <a href="#">Terms</a></p>
-            </footer>
-        </div>
-        <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+        {% block content %}
+        {% endblock %}  
+        <section id="footer" class="section footer">
+            <div class="container">
+                <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+                    <div class="col-sm-12 align-center">
+                        <p>
+                            An Verhuizen<br>
+                            Turfstraat 73<br>
+                            3600 Genk, {% trans "België" %}
+                        </p>
+                        <p>
+                            <i class="fa fa-phone"></i> +32 (0) 485 / 940 326
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope-o"></i> <a href="mailto://anverhuizen@gmail.com">anverhuizen@gmail.com</a>
+                        </p>
+                        <p>
+                            <strong>IBAN</strong>: BE98 377 0433646 93 ({% trans "Bankrekening" %})                                               
+                        </p>
+                        <p>
+                        	<strong>BIC</strong>: BBRUBEBB
+                        </p>
+                        <p>
+                        	<strong>VAT</strong>: BE 0535.605.096 ({% trans "Kleine onderneming vrijgesteld van BTW" %})
+                        </p>
+                        <ul class="social-network social-circle">
+                            <li><a href="{% url "blog" %}" class="icoRss" title="Blog"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="https://twitter.com/anverhuizen" target="_blank" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://linkd.in/anverhuizen" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>               
+                    </div>
+                </div>
+    
+                <div class="row align-center copyright">
+                        <div class="col-sm-12"><p>{% trans "Copyright" %} &copy; 2014 An Verhuizen</p></div>
+                </div>
+            </div>
+    
+        </section>
+        <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a> 
+    
+        <script src="{% static "portfolio_an/js/modernizr-2.6.2-respond-1.1.0.min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.easing.1.3.js" %}"></script>
+        <script src="{% static "portfolio_an/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.isotope.min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.nicescroll.min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/fancybox/jquery.fancybox.pack.js" %}"></script>
+        <script src="{% static "portfolio_an/js/skrollr.min.js" %}"></script>       
+        <script src="{% static "portfolio_an/js/jquery.scrollTo-1.4.3.1-min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.localscroll-1.2.7-min.js" %}"></script>
+        <script src="{% static "portfolio_an/js/stellar.js" %}"></script>
+        <script src="{% static "portfolio_an/js/jquery.appear.js" %}"></script>
+        <script src="{% static "portfolio_an/js/main.js" %}"></script>        
     </body>
 </html>

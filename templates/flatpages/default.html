@@ -1,0 +1,18 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+		<meta http-equiv="refresh" content="0; url=http://www.anverhuizen.be">
+		<meta name="title" content="An Verhuizen Vertaler-Tolk Spaans Engels Nederlands" >
+		<meta name="description" content="Een beëdigde vertaling nodig of een tolk om jou te helpen in de rechtbank, bij de politie, het OCMW of het ziekenhuis? Bij mij ben je aan het juiste adres!">
+		<meta property="og:type" content="website" >
+		<meta property="og:url" content="http://www.anverhuizen.be" >
+		<meta property="og:title" content="An Verhuizen Vertaler-Tolk Spaans Engels Nederlands" >
+		<meta property="og:image" content="http://www.anverhuizen.be{% static "portfolio_an/img/anverhuizen-small.jpg" %}" >
+		<meta property="og:description" content="Een beëdigde vertaling nodig of een tolk om jou te helpen in de rechtbank, bij de politie, het OCMW of het ziekenhuis? Bij mij ben je aan het juiste adres!" >
+		<title>{{ flatpage.title }}</title>
+	</head>
+	<body>
+		{{ flatpage.content }}
+	</body>
+</html>

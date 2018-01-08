@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 post {% if forloop.last %}last{% endif %}">
+        <h2>{{ post.title }}</h2>
+        <ul>                        
+            <div class="body">{{ post.body|safe }}</div>
+            <div class="time align-right">{{ post.created }}</div>
+            <div class="commentlink">
+            <a href="{% url "post" post.pk %}#comment">Comments ({{ post.comment_set.count }})</a>
+            </div>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 10, ../sass/custom.scss */
+.success {
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* line 16, ../sass/custom.scss */
+.navbar-brand span {
+  color: #70B9B0;
+}
+
+/* line 21, ../sass/custom.scss */
+.my-image {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}

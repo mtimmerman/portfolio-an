@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% load i18n static %}
+     
+{% block content %}
+<section class="featured">
+    <div class="container"> 
+        <div class="row mar-bot40">
+            <div class="col-md-6 col-md-offset-3">
+                
+                <div class="align-center">
+                    <img class="my-image" src="{% static "portfolio_an/img/anverhuizen.jpg" %}" title="{% trans "Hallo! Ik ben An Verhuizen." %}" >
+                    
+                    <h2 class="slogan">{% trans "Welkom!" %}</h2>
+                    <p>
+                        {% blocktrans %}Een beëdigde vertaling nodig maar je weet niet waar beginnen? Wil je je diploma, geboorte-, huwelijksakte of rijbewijs officieel laten vertalen?{% endblocktrans %}
+                    </p>
+                    <p>
+                        {% blocktrans %}Of ben je op zoek naar een (beëdigde) tolk voor de rechtbank, de politie, het OCMW of het ziekenhuis? Dan ben je bij mij aan het juiste adres!{% endblocktrans %}
+                    </p>
+                    <p>
+                        {% blocktrans %}Dit zijn slechts enkele voorbeelden van situaties waarin ik jou kan helpen. Neem zeker eens een kijkje op deze website. Vragen? Je kunt me altijd contacteren en gratis een vrijblijvende offerte aanvragen.{% endblocktrans %}
+                    </p>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- services -->
+<section id="section-services" class="section appear pad-bot30 bg-white">
+<div class="container"> 
+
+    <div class="row mar-bot40">
+        <div class="col-lg-6" >
+            <div class="align-center">
+                <i class="fa fa-gavel fa-5x mar-bot20"></i>
+                <h4 class="text-bold">{% trans "(Beëdigde) vertalingen" %}</h4>
+                <p class="align-left">
+                    {% blocktrans %}Verhuis je naar het buitenland en moet je documenten laten vertalen? Of kom je naar België en heb je een officiële vertaling nodig? Een geboorteakte, paspoort of visum zijn allemaal voorbeelden van officiële documenten die een beëdigde vertaling vragen. Hier vind je alvast een beknopt overzicht van documenten die ik voor jou kan vertalen van en naar het Spaans, Engels en Nederlands.{% endblocktrans %}
+                </p>
+                <div class="row align-left">
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Geboorteakte" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Medisch attest" %}
+                    </div>                    
+                </div>    
+                <div class="row align-left">
+                	<div class="col-lg-5">
+                		<i class="fa fa-pencil-square-o"></i> {% trans "Nationaliteitsbewijs" %}
+                	</div>
+                	<div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Diploma" %}
+                    </div>                	
+                </div>                    
+                <div class="row align-left">                    
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Overlijdensakte" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Adoptiedocumenten" %}
+                    </div>
+                </div>
+                <div class="row align-left">
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Huwelijksakte" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Successie" %}
+                    </div>
+                </div>
+                <div class="row align-left">
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Oprichtingsakte" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Echtscheidingsakte" %}
+                    </div>
+                </div>
+                <div class="row align-left">                    
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Rijbewijs" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Contracten" %}
+                    </div>
+                </div>
+                <div class="row align-left">
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Getuigschrift van woonst" %}
+                    </div>                    
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Paspoort" %}
+                    </div>
+                </div>
+                <div class="row align-left">
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Statuten" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Bewijs van goed gedrag en zeden" %}
+                    </div>
+                </div>
+                <div class="row align-left">                    
+                    <div class="col-lg-5">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Visum" %}
+                    </div>
+                    <div class="col-lg-7">
+                        <i class="fa fa-pencil-square-o"></i> {% trans "Vonnissen" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-lg-6" >
+            <div class="align-center">
+                <i class="fa fa-users fa-5x mar-bot20"></i>
+                <h4 class="text-bold">{% trans "(Beëdigde) tolkopdrachten" %}</h4>
+                <p class="align-left">
+                    {% blocktrans %}Als gecertificeerde tolk kan ik jou helpen met verschillende (officiële) gelegenheden. Van een huwelijk of hulpverlenende gesprekken tot je rijexamen afleggen met een tolk, het kan allemaal! Omdat ik beëdigd ben, kan ik ook tolken voor het parket, de rechtbank of de politie.{% endblocktrans %}
+                </p>
+            </div>
+        </div>            
+    
+    </div>  
+
+</div>
+</section>
+    
+<!-- spacer section:testimonial -->
+<section id="testimonials" class="section" data-stellar-background-ratio="0.5">
+<div class="container">
+    <div class="row">               
+        <div class="col-lg-12">
+            <div class="align-center">
+                    <div class="testimonial pad-top40 pad-bot40 clearfix">
+                        <h3>
+                            &quot;{% trans "Al van kleins af aan ben ik geboeid door alles wat met taal te maken heeft." %}&quot;
+                        </h3>                                            
+                    </div>
+                </div>
+            </div>
+        </div>                
+    </div>  
+</div>  
+</section>
+    
+<!-- about -->
+<section id="section-about" class="section appear clearfix">
+    <div class="container">
+        <div class="row mar-bot40">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="section-header">
+                    <p class="align-left">
+                        {% blocktrans %}Na het middelbaar heb ik een jaar in Chili gewoond bij een gastfamilie.
+                        Na mijn jaaruitwisseling wilde ik vertaler-tolk Engels-Spaans-Nederlands gaan studeren in Brussel, de hoofdstad en een mengkroes van culturen, talen en mensen.
+                        Tijdens mijn opleiding aan de HU Brussel wist ik het zeker: ik wilde mensen helpen om taalbarrières te overbruggen.
+                        De volgende stap was dan ook een Erasmusuitwisseling naar Salamanca, het mekka der Spaanse talen voor al diegenen die ‘correct Spaans willen spreken’.
+                        Wonen in Spanje en Chili heeft me ook inzicht gegeven in de gewoontes en het taalgebruik van Spanjaarden en Zuid-Amerikanen.
+                        Zo beschik ik over voldoende bagage om elk Spaanstalig probleem te tackelen.{% endblocktrans %}
+                    </p>
+                    <p class="align-left">
+                        {% blocktrans %}Verder heb ik een bijkomende opleiding gevolgd aan de Sociale Ondersteuningscel Sociaal Tolken en Vertalen (Kruispunt Migratie-Integratie). Zo kan ik sinds 2011 ook als gecertificeerd sociaal tolk en vertaler aan de slag.
+                        In hetzelfde jaar heb ik ook mijn master behaald als tolk Engels-Spaans-Nederlands aan de HUB. Sindsdien werk ik als gecertificeerd sociaal vertaler-tolk voor de provincies Limburg en Vlaams-Brabant.{% endblocktrans %}
+                    </p>
+                    <p class="align-left">
+                        {% blocktrans %}In 2012 liet ik me beëdigen in de Rechtbank van Eerste Aanleg te Tongeren. 
+                        Daardoor ben ik bevoegd om beëdigde vertalingen af te leveren. 
+                        De beëdigde vertalingen worden dus gelegaliseerd door de Rechtbank in Tongeren en zijn geldig overal in België.{% endblocktrans %}
+                    </p>
+                    <p class="align-left">
+                        {% blocktrans %}Kortom: van een simpele huwelijksakte tot een complex juridisch document of rechtszaak, u kunt bij mij steeds terecht voor een snelle, discrete en kwalitatieve service.{% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+        </div>                    
+    </div>
+</section>
+<!-- /about -->
+
+<!-- spacer section:stats -->
+<section id="parallax1" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+    <div class="container">
+    <div class="align-center pad-top40 pad-bot40">
+        <blockquote class="bigquote color-white">{% trans "Vragen?" %}</blockquote>
+        <p class="color-white">{% trans "Ik zal er alvast enkele voor je beantwoorden." %}</p>
+    </div>
+    </div>  
+</section>
+
+<!-- section works -->
+<section id="section-faq" class="section appear clearfix">
+    <div class="container">                
+        <div class="row mar-bot40" id="accordion">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="section-header">                            
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <h3 class="section-heading animated" data-animation="bounceInUp">{% trans "Heb ik een beëdigde vertaling nodig?" %}</h3>
+                    </a>
+                    <p id="collapseOne" class="collapse">
+                        {% blocktrans %}Voor bijna elke vertaling van een officieel document, heb je een beëdigde vertaling nodig. Als beëdigde vertaler bij de Rechtbank van Eerste Aanleg ben ik hiervoor bevoegd.  Aan het einde van een vertaling plaats ik een handtekening en naamstempel. Daaraan kun je zien dat de vertaling waarheidsgetrouw en officieel is.{% endblocktrans %}
+                    </p>
+                    <i class="fa fa-minus mar-bot20"></i>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <h3 class="section-heading animated" data-animation="bounceInUp">{% trans "Wanneer moet een vertaling gelegaliseerd worden?" %}</h3>
+                    </a>
+                    <p id="collapseTwo" class="collapse">
+                        {% blocktrans %}Een beëdigde vertaling wordt gelegaliseerd door de Rechtbank van Eerste Aanleg als dat nodig is. De rechtbank vergelijkt mijn handtekening met de handtekening in het officiële vertalerregister. Daarna stempelt de Rechtbank van Eerste Aanleg de beëdigde vertaling af om ze wettig te verklaren.{% endblocktrans %}
+                    </p>
+                    <i class="fa fa-minus mar-bot20"></i>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        <h3 class="section-heading animated" data-animation="bounceInUp">{% trans "Hoelang duurt een vertaling?" %}</h3>
+                    </a>
+                    <p id="collapseThree" class="collapse">
+                        {% blocktrans %}De duur van een vertaling hangt af van de moeilijkheidsgraad en het type tekst. Wanneer je een technische of juridisch complexe vertaling nodig hebt, vraagt dit meer tijd. Als je vertaling gelegaliseerd moet worden, moet deze nog opgestuurd worden naar de Rechtbank van Eerste Aanleg. Als dit via de post gebeurt, kan dit vier tot vijf werkdagen duren.{% endblocktrans %}    
+                    </p>
+                    <i class="fa fa-minus mar-bot20"></i>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                        <h3 class="section-heading animated" data-animation="bounceInUp">{% trans "Kun je de vertaling ook sneller leveren?" %}</h3>
+                    </a>
+                    <p id="collapseFour" class="collapse">
+                        {% blocktrans %}Ik kan je vertaling ook met spoed behandelen. Dit betekent dat ik er weekends en nachten aan werk om jou zo snel mogelijk de vertaling te overhandigen. De legalisatie kan ik ook versnellen door zelf met de vertaling naar de rechtbank te gaan en het document ter plekke te laten legaliseren.{% endblocktrans %}
+                    </p>
+                    <i class="fa fa-minus mar-bot20"></i>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                        <h3 class="section-heading animated" data-animation="bounceInUp">{% trans "Hoeveel kost een beëdigde vertaling?" %}</h3>
+                    </a>
+                    <p id="collapseFive" class="collapse">
+                        {% blocktrans %}Een beëdigde vertaling heeft geen vaste prijs. Deze is afhankelijk van de (beperkte) tijdsspanne, legalisatie en beëdiging. Om te weten hoeveel jouw vertaling kost, kun je me jouw documenten opsturen via het contactformulier op deze website. Ik stuur jou dan vrijblijvend een gratis offerte.{% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+        </div>                        
+    </div>
+</section>
+<section id="parallax2" class="section parallax" data-stellar-background-ratio="0.5">   
+    <div class="align-center pad-top40 pad-bot40">
+        <blockquote class="bigquote color-white">{% trans "Contacteer mij" %}</blockquote>
+        <p class="color-white">{% trans "Voor meer info of een vrijblijvende, gratis offerte" %}</p>
+    </div>
+</section>
+
+<!-- contact -->
+<section id="section-contact" class="section appear clearfix">
+    <div class="container">
+        
+        <div class="row mar-bot40">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="section-header">                            
+                    <p>{% trans "Nog geen antwoord op jouw vraag? Stel je vragen hier of vraag een offerte aan. Vergeet niet om je documenten mee te sturen!" %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="cform" id="contact-form">
+                    {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                    <form action="{{request.path}}#section-contact" method="post" role="form" class="contactForm" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <div class="form-group">
+                        <label for="name">{% trans "Naam" %}</label>
+                        {% with form.first_name as field %}
+                            {% include "_field.html" %}
+                        {% endwith %}
+                        {% with form.last_name as field %}
+                            {% include "_field.html" %}
+                        {% endwith %}
+                      </div>
+                      <div class="form-group">
+                        <label for="email">{% trans "Email" %}</label>
+                        {% with form.email as field %}
+                            {% include "_field.html" %}
+                        {% endwith %}
+                      </div>
+                      <div class="form-group">
+                        <label for="message">{% trans "Jouw bericht" %}</label>
+                        {% with form.message as field %}
+                            {% include "_field.html" %}
+                        {% endwith %}
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="message">{{form.attachment.help_text}}</label>
+                        {% with form.attachment as field %}
+                            {% include "_field.html" %}
+                        {% endwith %}
+                      </div>
+                      
+                      <button type="submit" class="btn btn-theme pull-left">{% trans "VERZENDEN" %}</button>
+                    </form>
+
+                </div>
+            </div>
+            <!-- ./span12 -->
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

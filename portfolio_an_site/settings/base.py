@@ -24,15 +24,23 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'portfolio.db', # Or path to database file if using sqlite3.
-        'USER': '', # Not used with sqlite3.
-        'PASSWORD': '', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '', # Set to empty string for default. Not used with sqlite3.
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+       'NAME': '../../portfolio.db', # Or path to database file if using sqlite3.
+       'USER': 'yzejuhemunqwyk', # Not used with sqlite3.
+       'PASSWORD': 'n4rRWvuOhsTVUq1xmFWkgC_X2L', # Not used with sqlite3.
+       'HOST': 'ec2-54-204-41-249.compute-1.amazonaws.com', # Set to empty string for localhost. Not used with sqlite3.
+       'PORT': '5432', # Set to empty string for default. Not used with sqlite3.
+   }
 }
+
+
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#allowed-hosts
@@ -50,13 +58,16 @@ TIME_ZONE = 'Europe/Brussels'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'nl'
+
+from django.utils.translation import ugettext_lazy as _
+
 LANGUAGES = (
-    ('nl', 'BE'),
-    ('en', 'EN'),
-    ('es', 'ES'),
+    ('nl', _('Nederlands'),),
+    ('en', _('Engels'),),
+    ('es', _('Spaans'),),
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -69,20 +80,23 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
-
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MEDIA_ROOT = 'media'
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = '/media/'
+
+
+STATIC_ROOT = 'staticfiles'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -126,6 +140,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
 )
 
 ROOT_URLCONF = 'portfolio_an_site.urls'
@@ -142,6 +157,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
 )
 
 INSTALLED_APPS = (
@@ -155,6 +171,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'portfolio_an',
+    'portfolio_an.blog',
+    
+    'django_extensions',
 
     'south',
 )
@@ -186,7 +205,13 @@ LOGIN_URL = 'login'
 
 AUTH_USER_MODEL = 'portfolio_an.PortfolioUser'
 
+SERVER_EMAIL = "anverhuizen@gmail.com"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'portfolio.anverhuizen@gmail.com'
+EMAIL_HOST_PASSWORD = 'anverCity309/1huizen'
+EMAIL_USE_TLS = True
+
 LOCALE_PATHS = (
     os.path.join(os.path.dirname(__file__), '../../', 'locale').replace('\\', '/'),
 )
-
