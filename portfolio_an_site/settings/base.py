@@ -23,18 +23,31 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-       'NAME': '../../portfolio.db', # Or path to database file if using sqlite3.
-       'USER': 'yzejuhemunqwyk', # Not used with sqlite3.
-       'PASSWORD': 'n4rRWvuOhsTVUq1xmFWkgC_X2L', # Not used with sqlite3.
-       'HOST': 'ec2-54-204-41-249.compute-1.amazonaws.com', # Set to empty string for localhost. Not used with sqlite3.
-       'PORT': '5432', # Set to empty string for default. Not used with sqlite3.
-   }
+engines = {
+    'sqlite': 'django.db.backends.sqlite3',
+    'postgresql': 'django.db.backends.postgresql_psycopg2',
+    'mysql': 'django.db.backends.mysql',
 }
 
+service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
 
+if service_name:
+    engine = engines.get(os.getenv('DATABASE_ENGINE'), engines['sqlite'])
+else:
+    engine = engines['sqlite']
+
+name = os.getenv('DATABASE_NAME')
+
+DATABASES = {
+    'default': {
+        'ENGINE': engine,
+        'NAME': name,
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
+        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+    }
+}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
