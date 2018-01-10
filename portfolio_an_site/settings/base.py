@@ -23,29 +23,14 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-engines = {
-    'sqlite': 'django.db.backends.sqlite3',
-    'postgresql': 'django.db.backends.postgresql_psycopg2',
-    'mysql': 'django.db.backends.mysql',
-}
-
-service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().replace('-', '_')
-
-if service_name:
-    engine = engines.get(os.getenv('DATABASE_ENGINE'), engines['sqlite'])
-else:
-    engine = engines['sqlite']
-
-name = os.getenv('DATABASE_NAME')
-
 DATABASES = {
     'default': {
-        'ENGINE': engine,
-        'NAME': name,
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('{}_SERVICE_HOST'.format(service_name)),
-        'PORT': os.getenv('{}_SERVICE_PORT'.format(service_name)),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3bq06dteit67e',
+        'USER': 'sfwaeroepahpkh',
+        'PASSWORD': '290d9060eccff2d609e212532d698d83c68802fe402d5f5a4dfd8c94ffe0ae20',
+        'HOST': 'ec2-23-21-246-25.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
