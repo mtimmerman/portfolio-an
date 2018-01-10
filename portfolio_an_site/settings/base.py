@@ -1,6 +1,8 @@
 # Django settings for portfolio_an project.
 
 import os
+import urlparse
+
 ROOT = os.path.abspath(
     os.path.join(
         os.path.abspath(os.path.dirname(__file__)),
@@ -23,14 +25,17 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+urlparse.uses_netloc.append("postgres")
+url = urlparse.urlparse(os.environ["DATABASE_URL"])
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3bq06dteit67e',
-        'USER': 'sfwaeroepahpkh',
-        'PASSWORD': '290d9060eccff2d609e212532d698d83c68802fe402d5f5a4dfd8c94ffe0ae20',
-        'HOST': 'ec2-23-21-246-25.compute-1.amazonaws.com',
-        'PORT': 5432,
+        'NAME': url.path[1:],
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port
     }
 }
 
