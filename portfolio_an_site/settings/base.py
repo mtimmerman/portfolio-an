@@ -70,7 +70,7 @@ LANGUAGES = (
     ('es', _('Spaans'),),
 )
 
-SITE_ID = 2
+SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
